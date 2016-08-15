@@ -71,11 +71,12 @@ int convertRomanToInt(char * inputRomanNumeral) { //returns Roman Numberal or ER
 
 //returns the number of tokens found
 int getTokensFromRoman(char *inputRomanNumeral, unsigned char (*Tokens)[TOKEN_QTY][TOKEN_SIZE]) {
-	int returnValue=0;
+	int tokensReturned=0;
 	if (!strcmp(inputRomanNumeral, "M")) {
-		returnValue=1;
+		tokensReturned=1;
+		strncat((*Tokens)[0], "M", 1);
 	}
-	return returnValue;
+	return tokensReturned;
 }
 
 
