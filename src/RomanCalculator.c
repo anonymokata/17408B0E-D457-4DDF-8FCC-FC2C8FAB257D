@@ -18,8 +18,12 @@
 
 //Convert an inputNumber to a string Roman Numeral
 void convertIntToRoman(int inputNumber, char * outputRomanNumeral) {
-	int thousands=inputNumber/1000;
-    strncpy(outputRomanNumeral, "MMM", thousands);
+	if (inputNumber >= 4000) {
+		strcpy(outputRomanNumeral, ERROR_MSG);
+	} else {
+		int thousands=inputNumber/1000;
+		strncpy(outputRomanNumeral, "MMM", thousands);
+	}
 }
 
 //Converts a Roman Numeral to an integer, since 0 is not a valid Roman Numeral 0 is returned on Error
