@@ -127,6 +127,14 @@ START_TEST(whenconvertIntToRomanisPassed3779AndReturnsMMMDCCLXXIX)
 	ck_assert_msg(result, "Failure, returnValue='%s'\r\n", returnValue);
 }
 END_TEST
+START_TEST(whenconvertIntToRomanisPassed5AndReturnsV)
+{
+	unsigned char returnValue[MAX_ROMAN_LENGTH];
+	convertIntToRoman(5, returnValue);
+	_Bool result=!strcmp(returnValue, "V");
+	ck_assert_msg(result, "Failure, returnValue='%s'\r\n", returnValue);
+}
+END_TEST
 
 Suite * RomanCalculator_suite(void)
 {
@@ -153,6 +161,7 @@ Suite * RomanCalculator_suite(void)
 	tcase_add_test(tc_core, whenconvertIntToRomanisPassed1340AndReturnsMCCCXL);
 	tcase_add_test(tc_core, whenconvertIntToRomanisPassed2020AndReturnsMMXX);
 	tcase_add_test(tc_core, whenconvertIntToRomanisPassed3779AndReturnsMMMDCCLXXIX);
+	tcase_add_test(tc_core, whenconvertIntToRomanisPassed5AndReturnsV);
 	suite_add_tcase(s, tc_core);
     return s;
 }
