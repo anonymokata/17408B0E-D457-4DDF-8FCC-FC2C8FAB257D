@@ -13,6 +13,8 @@ stddef.h
 -
 stdio.h
 -
+string.h
+-
 RomanCalculator.h
 /home/dennis/check0.10/check-0.10.0/doc/RomanCalculator/src/RomanCalculator.h
 
