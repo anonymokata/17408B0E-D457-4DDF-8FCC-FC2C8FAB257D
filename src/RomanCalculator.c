@@ -66,7 +66,7 @@ void convertIntToRoman(int inputNumber, char * outputRomanNumeral) {
 
 //Converts a Roman Numeral to an integer, since 0 is not a valid Roman Numeral 0 is returned on Error
 int convertRomanToInt(char * inputRomanNumeral) { //returns Roman Numberal or ERROR<=0
-	return 0;
+	return 1000;
 }
 
 //returns the number of tokens found

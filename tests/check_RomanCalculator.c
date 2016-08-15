@@ -222,6 +222,12 @@ START_TEST(whengetTokensFromRomanisPassedMMMCCCLXXAndReturnsQty4AndMMM_CCC_L_XX)
 	ck_assert_msg(result, "Failure, qty='%d', Values='%s','%s','%s','%s'\r\n", qty, Tokens[0], Tokens[1], Tokens[2], Tokens[3]);
 }
 END_TEST
+START_TEST(whenconvertRomanToIntisPassedMAndReturns1000)
+{
+	int result=convertRomanToInt("M");	
+	ck_assert_msg(result==1000, "Failure, result='%d'\r\n", result);
+}
+END_TEST
 
 Suite * RomanCalculator_suite(void)
 {
@@ -255,6 +261,7 @@ Suite * RomanCalculator_suite(void)
 	tcase_add_test(tc_core, whengetTokensFromRomanisPassedMAndReturnsQty1AndM);
 	tcase_add_test(tc_core, whengetTokensFromRomanisPassedMCLAndReturnsQty3AndM_C_L);
 	tcase_add_test(tc_core, whengetTokensFromRomanisPassedMMMCCCLXXAndReturnsQty4AndMMM_CCC_L_XX);
+	tcase_add_test(tc_core, whenconvertRomanToIntisPassedMAndReturns1000);
 	suite_add_tcase(s, tc_core);
     return s;
 }
