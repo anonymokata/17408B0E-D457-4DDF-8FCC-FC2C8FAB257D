@@ -151,7 +151,17 @@ START_TEST(whenconvertIntToRomanisPassed3888AndReturnsMMMDCCCLXXXVIII)
 	ck_assert_msg(result, "Failure, returnValue='%s'\r\n", returnValue);
 }
 END_TEST
-
+START_TEST(whengetTokensFromRomanisPassedMAndReturnsQty1)
+{
+	unsigned char Tokens[TOKEN_QTY][TOKEN_SIZE]={0};
+	int qty=getTokensFromRoman("M", &Tokens);
+	_Bool result=1; //Assume result is fine
+	if (qty != 1) {
+		result=0; 
+	}
+	ck_assert_msg(result, "Failure, qty='%d'\r\n", qty);
+}
+END_TEST
 Suite * RomanCalculator_suite(void)
 {
     Suite *s;
@@ -180,6 +190,7 @@ Suite * RomanCalculator_suite(void)
 	tcase_add_test(tc_core, whenconvertIntToRomanisPassed5AndReturnsV);
 	tcase_add_test(tc_core, whenconvertIntToRomanisPassed1664AndReturnsMDCLXIV);
 	tcase_add_test(tc_core, whenconvertIntToRomanisPassed3888AndReturnsMMMDCCCLXXXVIII);
+	tcase_add_test(tc_core, whengetTokensFromRomanisPassedMAndReturnsQty1);
 	suite_add_tcase(s, tc_core);
     return s;
 }

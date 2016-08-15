@@ -69,6 +69,16 @@ int convertRomanToInt(char * inputRomanNumeral) { //returns Roman Numberal or ER
 	return 0;
 }
 
+//returns the number of tokens found
+int getTokensFromRoman(char *inputRomanNumeral, unsigned char (*Tokens)[TOKEN_QTY][TOKEN_SIZE]) {
+	int returnValue=0;
+	if (!strcmp(inputRomanNumeral, "M")) {
+		returnValue=1;
+	}
+	return returnValue;
+}
+
+
 // Customer Interface, outputRomanNumeral= firstInputRomanNumeral + secondInputRomanNumeral, "Error" when input or error is incorrect
 void AddTwoRomans(char * firstInputRomanNumeral, char * secondInputRomanNumeral, char * outputRomanNumeral) {
 }
