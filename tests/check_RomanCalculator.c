@@ -112,6 +112,7 @@ START_TEST(whenconvertIntToRomanisPassed1340AndReturnsMCCCXL)
 }
 END_TEST
 
+
 Suite * RomanCalculator_suite(void)
 {
     Suite *s;
@@ -134,6 +135,7 @@ Suite * RomanCalculator_suite(void)
 	tcase_add_test(tc_core, whenconvertIntToRomanisPassed2800AndReturnsMMDCCC);
 	tcase_add_test(tc_core, whenconvertIntToRomanisPassed2990AndReturnsMMCMXC);
 	tcase_add_test(tc_core, whenconvertIntToRomanisPassed50AndReturnsL);
+	tcase_add_test(tc_core, whenconvertIntToRomanisPassed1340AndReturnsMCCCXL);
 	suite_add_tcase(s, tc_core);
     return s;
 }
