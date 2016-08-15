@@ -26,10 +26,15 @@ void convertIntToRoman(int inputNumber, char * outputRomanNumeral) {
 		int remainder=inputNumber-(thousands * 1000);
 		if (remainder >= 900) {
 			strncat(outputRomanNumeral, "CM", 2);
-			remainder=remainder-500;
+			remainder=remainder-900;
 		}
 		if (remainder >= 500) {
 			strncat(outputRomanNumeral, "D", 1);
+			remainder=remainder-500;
+		}
+		if (remainder >= 400) {
+			strncat(outputRomanNumeral, "CD", 2);
+			remainder=remainder-400;
 		}
 	}
 }
