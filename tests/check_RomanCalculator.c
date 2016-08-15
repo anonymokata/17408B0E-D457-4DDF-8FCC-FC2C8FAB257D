@@ -103,6 +103,14 @@ START_TEST(whenconvertIntToRomanisPassed50AndReturnsL)
 	ck_assert_msg(result, "Failure, returnValue='%s'\r\n", returnValue);
 }
 END_TEST
+START_TEST(whenconvertIntToRomanisPassed1340AndReturnsMCCCXL)
+{
+	unsigned char returnValue[MAX_ROMAN_LENGTH];
+	convertIntToRoman(1340, returnValue);
+	_Bool result=!strcmp(returnValue, "MCCCXL");
+	ck_assert_msg(result, "Failure, returnValue='%s'\r\n", returnValue);
+}
+END_TEST
 
 Suite * RomanCalculator_suite(void)
 {
