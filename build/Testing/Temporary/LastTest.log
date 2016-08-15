@@ -1,20 +1,20 @@
-Start testing: Aug 15 15:39 EDT
+Start testing: Aug 15 15:48 EDT
 ----------------------------------------------------------
 1/1 Testing: check_RomanCalculator
 1/1 Test: check_RomanCalculator
 Command: "/home/dennis/check0.10/check-0.10.0/doc/RomanCalculator/build/tests/check_RomanCalculator"
 Directory: /home/dennis/check0.10/check-0.10.0/doc/RomanCalculator/build
-"check_RomanCalculator" start time: Aug 15 15:39 EDT
+"check_RomanCalculator" start time: Aug 15 15:48 EDT
 Output:
 ----------------------------------------------------------
 Running suite(s): RomanCalculatorSuite
-100%: Checks: 12, Failures: 0, Errors: 0
+100%: Checks: 13, Failures: 0, Errors: 0
 <end of output>
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"check_RomanCalculator" end time: Aug 15 15:39 EDT
+"check_RomanCalculator" end time: Aug 15 15:48 EDT
 "check_RomanCalculator" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Aug 15 15:39 EDT
+End testing: Aug 15 15:48 EDT
