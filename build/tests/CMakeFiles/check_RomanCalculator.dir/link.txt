@@ -1,0 +1,1 @@
+/usr/bin/cc  -g    CMakeFiles/check_RomanCalculator.dir/check_RomanCalculator.c.o  -o check_RomanCalculator -rdynamic ../src/libRomanCalculator.a -lcheck 

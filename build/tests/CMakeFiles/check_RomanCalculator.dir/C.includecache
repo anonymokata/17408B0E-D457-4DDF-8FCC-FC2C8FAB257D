@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dennis/check0.10/check-0.10.0/doc/RomanCalculator/src/RomanCalculator.h
+
+/home/dennis/check0.10/check-0.10.0/doc/RomanCalculator/tests/check_RomanCalculator.c
+config.h
+-
+stdlib.h
+-
+stdint.h
+-
+stdio.h
+-
+check.h
+-
+check_stdint.h
+-
+../src/RomanCalculator.h
+/home/dennis/check0.10/check-0.10.0/doc/RomanCalculator/src/RomanCalculator.h
+
+/usr/local/include/check.h
+stddef.h
+-
+string.h
+-
+check_stdint.h
+-
+sys/types.h
+-
+
+/usr/local/include/check_stdint.h
+stdint.h
+-
+
+config.h
+

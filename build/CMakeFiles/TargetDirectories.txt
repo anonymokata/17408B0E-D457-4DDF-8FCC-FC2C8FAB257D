@@ -1,0 +1,3 @@
+/home/dennis/check0.10/check-0.10.0/doc/RomanCalculator/build/src/CMakeFiles/RomanCalculator.dir
+/home/dennis/check0.10/check-0.10.0/doc/RomanCalculator/build/tests/CMakeFiles/check_RomanCalculator.dir
+/home/dennis/check0.10/check-0.10.0/doc/RomanCalculator/build/src/CMakeFiles/main.dir

@@ -1,0 +1,2 @@
+/usr/bin/ar cr libRomanCalculator.a  CMakeFiles/RomanCalculator.dir/RomanCalculator.c.o
+/usr/bin/ranlib libRomanCalculator.a

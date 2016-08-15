@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dennis/check0.10/check-0.10.0/doc/RomanCalculator/src/RomanCalculator.c
+stdlib.h
+-
+stddef.h
+-
+stdio.h
+-
+RomanCalculator.h
+/home/dennis/check0.10/check-0.10.0/doc/RomanCalculator/src/RomanCalculator.h
+
+/home/dennis/check0.10/check-0.10.0/doc/RomanCalculator/src/RomanCalculator.h
+
