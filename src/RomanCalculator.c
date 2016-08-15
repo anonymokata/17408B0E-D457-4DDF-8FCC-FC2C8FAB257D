@@ -39,6 +39,10 @@ void convertIntToRoman(int inputNumber, char * outputRomanNumeral) {
 		int hundreds=remainder/100;
 		strncat(outputRomanNumeral, "CCC", hundreds);
 		remainder=remainder - (hundreds *100);
+		if (remainder >=90) {
+			strncat(outputRomanNumeral, "XC", 2);
+			remainder=remainder-90;
+		}
 	}
 }
 
