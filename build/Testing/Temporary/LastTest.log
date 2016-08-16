@@ -1,20 +1,22 @@
-Start testing: Aug 15 22:46 EDT
+Start testing: Aug 15 23:08 EDT
 ----------------------------------------------------------
 1/1 Testing: check_RomanCalculator
 1/1 Test: check_RomanCalculator
 Command: "/home/dennis/check0.10/check-0.10.0/doc/RomanCalculator/build/tests/check_RomanCalculator"
 Directory: /home/dennis/check0.10/check-0.10.0/doc/RomanCalculator/build
-"check_RomanCalculator" start time: Aug 15 22:46 EDT
+"check_RomanCalculator" start time: Aug 15 23:08 EDT
 Output:
 ----------------------------------------------------------
 Running suite(s): RomanCalculatorSuite
-100%: Checks: 35, Failures: 0, Errors: 0
+97%: Checks: 36, Failures: 1, Errors: 0
+/home/dennis/check0.10/check-0.10.0/doc/RomanCalculator/tests/check_RomanCalculator.c:332:F:Core:whenAddTwoRomansAddsMCandCMequalsMM:0: Failure, first='MC', second='CM', result='MM'
+
 <end of output>
-Test time =   0.04 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"check_RomanCalculator" end time: Aug 15 22:46 EDT
+Test Failed.
+"check_RomanCalculator" end time: Aug 15 23:08 EDT
 "check_RomanCalculator" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Aug 15 22:46 EDT
+End testing: Aug 15 23:08 EDT

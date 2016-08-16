@@ -168,6 +168,9 @@ int getTokensFromRoman(char *inputRomanNumeral, unsigned char (*Tokens)[TOKEN_QT
 
 // Customer Interface, outputRomanNumeral= firstInputRomanNumeral + secondInputRomanNumeral, "Error" when input or error is incorrect
 void AddTwoRomans(char * firstInputRomanNumeral, char * secondInputRomanNumeral, char * outputRomanNumeral) {
+	int firstNumber= convertRomanToInt(firstInputRomanNumeral);
+	int secondNumber= convertRomanToInt(secondInputRomanNumeral);
+	convertIntToRoman(firstNumber + secondNumber, outputRomanNumeral);
 }
 
 // Customer Interface, outputRomanNumeral= firstInputRomanNumeral - subtractedInputRomanNumeral, "Error" when input or error is incorrect
