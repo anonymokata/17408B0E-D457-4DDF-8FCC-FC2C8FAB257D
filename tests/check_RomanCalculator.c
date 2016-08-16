@@ -246,6 +246,12 @@ START_TEST(whenconvertRomanToIntisPassedDCCAndReturns700)
 	ck_assert_msg(result==700, "Failure, result='%d'\r\n", result);
 }
 END_TEST
+START_TEST(whenconvertRomanToIntisPassedLAndReturns50)
+{
+	int result=convertRomanToInt("L");	
+	ck_assert_msg(result==50, "Failure, result='%d'\r\n", result);
+}
+END_TEST
 
 Suite * RomanCalculator_suite(void)
 {
@@ -283,6 +289,7 @@ Suite * RomanCalculator_suite(void)
 	tcase_add_test(tc_core, whenconvertRomanToIntisPassedMMMAndReturns3000);
 	tcase_add_test(tc_core, whenconvertRomanToIntisPassedMDAndReturns1500);
 	tcase_add_test(tc_core, whenconvertRomanToIntisPassedDCCAndReturns700);
+	tcase_add_test(tc_core, whenconvertRomanToIntisPassedLAndReturns50);
 	suite_add_tcase(s, tc_core);
     return s;
 }
