@@ -70,6 +70,7 @@ int convertRomanToInt(char * inputRomanNumeral) { //returns Roman Numberal or ER
 	int qtyOfTokens=getTokensFromRoman(inputRomanNumeral, &Tokens);
     int index;
 	int returnValue=0;
+	_Bool converted;
 	index=0;
 	while(index < qtyOfTokens) {
 		int len=strlen(Tokens[index]);
@@ -81,10 +82,19 @@ int convertRomanToInt(char * inputRomanNumeral) { //returns Roman Numberal or ER
 				returnValue=returnValue+500; //Only 1 d is allowed
 				break;
 			case 'C':
-				if ((index+1 < qtyOfTokens)&&(Tokens[index+1][0]=='M')) {
-					returnValue = returnValue + 900;
-					index++; //Can skip the M
-				} else {
+				converted=0;
+				if (index+1 < qtyOfTokens) {
+					if (Tokens[index+1][0]=='M') {
+						returnValue = returnValue + 900;
+						index++; //Can skip the M
+						converted=1;
+					} else if (Tokens[index+1][0]=='D') {
+						returnValue = returnValue + 400;
+						index++; //Can skip the D
+						converted=1;
+					}	
+				} 
+				if (!converted) {
 					returnValue=returnValue+100*len;
 				}
 				break;
@@ -92,13 +102,41 @@ int convertRomanToInt(char * inputRomanNumeral) { //returns Roman Numberal or ER
 				returnValue=returnValue+50; //Only one L is allowed
 				break;
 			case 'X':
-				returnValue=returnValue+10*len; 
+				converted=0;
+				if (index+1 < qtyOfTokens) {
+					if (Tokens[index+1][0]=='C') {
+						returnValue = returnValue + 90;
+						index++; //Can skip the C
+						converted=1;
+					} else if (Tokens[index+1][0]=='L') {
+						returnValue = returnValue + 40;
+						index++; //Can skip the L
+						converted=1;
+					}	
+				} 
+				if (!converted) {
+					returnValue=returnValue+10*len; 
+				}
 				break;
 			case 'V':
 				returnValue=returnValue+5; //Only one V is allowed
 		        break;
 			case 'I':
-				returnValue=returnValue+len;
+				converted=0;
+				if (index+1 < qtyOfTokens) {
+					if (Tokens[index+1][0]=='X') {
+						returnValue = returnValue + 9;
+						index++; //Can skip the C
+						converted=1;
+					} else if (Tokens[index+1][0]=='V') {
+						returnValue = returnValue + 4;
+						index++; //Can skip the V
+						converted=1;
+					}
+				} 
+				if (!converted) {
+					returnValue=returnValue+len;
+				}
 				break;
 			default:
 				returnValue=0;

@@ -276,7 +276,36 @@ START_TEST(whenconvertRomanToIntisPassedCMXAndReturns910)
 	ck_assert_msg(result==910, "Failure, result='%d'\r\n", result);
 }
 END_TEST
-
+START_TEST(whenconvertRomanToIntisPassedMCDAndReturns1400)
+{
+	int result=convertRomanToInt("MCD");	
+	ck_assert_msg(result==1400, "Failure, result='%d'\r\n", result);
+}
+END_TEST
+START_TEST(whenconvertRomanToIntisPassedXCIAndReturns91)
+{
+	int result=convertRomanToInt("XCI");	
+	ck_assert_msg(result==91, "Failure, result='%d'\r\n", result);
+}
+END_TEST
+START_TEST(whenconvertRomanToIntisPassedCDXLVAndReturns445)
+{
+	int result=convertRomanToInt("CDXLV");	
+	ck_assert_msg(result==445, "Failure, result='%d'\r\n", result);
+}
+END_TEST
+START_TEST(whenconvertRomanToIntisPassedIXAndReturns9)
+{
+	int result=convertRomanToInt("IX");	
+	ck_assert_msg(result==9, "Failure, result='%d'\r\n", result);
+}
+END_TEST
+START_TEST(whenconvertRomanToIntisPassedIVAndReturns4)
+{
+	int result=convertRomanToInt("IV");	
+	ck_assert_msg(result==4, "Failure, result='%d'\r\n", result);
+}
+END_TEST
 
 Suite * RomanCalculator_suite(void)
 {
@@ -318,7 +347,12 @@ Suite * RomanCalculator_suite(void)
 	tcase_add_test(tc_core, whenconvertRomanToIntisPassedCCXAndReturns210);
 	tcase_add_test(tc_core, whenconvertRomanToIntisPassedMMDCCCVAndReturns2805);
 	tcase_add_test(tc_core, whenconvertRomanToIntisPassedVIIIAndReturns8);
-	tcase_add_test(tc_core, whenconvertRomanToIntisPassedCMXAndReturns910); 
+	tcase_add_test(tc_core, whenconvertRomanToIntisPassedCMXAndReturns910);
+	tcase_add_test(tc_core, whenconvertRomanToIntisPassedMCDAndReturns1400);
+	tcase_add_test(tc_core, whenconvertRomanToIntisPassedXCIAndReturns91);
+	tcase_add_test(tc_core, whenconvertRomanToIntisPassedCDXLVAndReturns445);
+	tcase_add_test(tc_core, whenconvertRomanToIntisPassedIXAndReturns9);
+	tcase_add_test(tc_core, whenconvertRomanToIntisPassedIVAndReturns4);
 	suite_add_tcase(s, tc_core);
     return s;
 }
