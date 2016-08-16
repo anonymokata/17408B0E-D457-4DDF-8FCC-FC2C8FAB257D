@@ -306,6 +306,22 @@ START_TEST(whenconvertRomanToIntisPassedIVAndReturns4)
 	ck_assert_msg(result==4, "Failure, result='%d'\r\n", result);
 }
 END_TEST
+START_TEST(whenTestingAllInReverse) //Converts all 1-3999 to Roman and back for comparison
+{
+	unsigned char eachRomanNumber[MAX_ROMAN_LENGTH];
+	int eachNumber;
+	int playbackNumber;
+	for (eachNumber=1; eachNumber<4000; eachNumber++) {
+		int index;
+		for (index=0; index < MAX_ROMAN_LENGTH; index++) {
+			eachRomanNumber[index]=0;
+		}
+		convertIntToRoman(eachNumber, eachRomanNumber);
+		playbackNumber=convertRomanToInt(eachRomanNumber);
+		ck_assert_msg(eachNumber==playbackNumber, "Failure, eachNumber='%d', playbackNumber='%d', Roman '%s'\r\n", eachNumber, playbackNumber, eachRomanNumber);
+	}
+}
+END_TEST
 
 Suite * RomanCalculator_suite(void)
 {
@@ -353,6 +369,7 @@ Suite * RomanCalculator_suite(void)
 	tcase_add_test(tc_core, whenconvertRomanToIntisPassedCDXLVAndReturns445);
 	tcase_add_test(tc_core, whenconvertRomanToIntisPassedIXAndReturns9);
 	tcase_add_test(tc_core, whenconvertRomanToIntisPassedIVAndReturns4);
+	tcase_add_test(tc_core, whenTestingAllInReverse);
 	suite_add_tcase(s, tc_core);
     return s;
 }
