@@ -175,4 +175,7 @@ void AddTwoRomans(char * firstInputRomanNumeral, char * secondInputRomanNumeral,
 
 // Customer Interface, outputRomanNumeral= firstInputRomanNumeral - subtractedInputRomanNumeral, "Error" when input or error is incorrect
 void SubTwoRomans(char * firstInputRomanNumeral, char * subtractedInputRomanNumeral, char * outputRomanNumeral) {
+	int firstNumber= convertRomanToInt(firstInputRomanNumeral);
+	int subtractedNumber= convertRomanToInt(subtractedInputRomanNumeral);
+	convertIntToRoman(firstNumber - subtractedNumber, outputRomanNumeral);
 }

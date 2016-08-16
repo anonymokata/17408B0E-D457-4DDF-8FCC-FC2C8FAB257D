@@ -332,6 +332,17 @@ START_TEST(whenAddTwoRomansAddsMCandCMequalsMM)
 	ck_assert_msg(result, "Failure, first='%s', second='%s', result='%s'\r\n", firstInputRomanNumeral, secondInputRomanNumeral, outputRomanNumeral);
 }
 END_TEST
+START_TEST(whenSubTwoRomansSubtractsMMMCCCLXXXIXsubMMCLXXVIIequalsMCCXII)
+{
+	unsigned char firstInputRomanNumeral[MAX_ROMAN_LENGTH]="MMMCCCLXXXIX";
+	unsigned char subtractedInputRomanNumeral[MAX_ROMAN_LENGTH]="MMCLXXVII";
+	unsigned char outputRomanNumeral[MAX_ROMAN_LENGTH];
+	SubTwoRomans(firstInputRomanNumeral, subtractedInputRomanNumeral, outputRomanNumeral);
+	_Bool result=!strcmp(outputRomanNumeral, "MCCXII");
+	ck_assert_msg(result, "Failure, first='%s', subtracted='%s', result='%s'\r\n", firstInputRomanNumeral, subtractedInputRomanNumeral, outputRomanNumeral);
+}
+END_TEST
+
 
 Suite * RomanCalculator_suite(void)
 {
@@ -381,6 +392,7 @@ Suite * RomanCalculator_suite(void)
 	tcase_add_test(tc_core, whenconvertRomanToIntisPassedIVAndReturns4);
 	tcase_add_test(tc_core, whenTestingAllInReverse);
 	tcase_add_test(tc_core, whenAddTwoRomansAddsMCandCMequalsMM);
+	tcase_add_test(tc_core, whenSubTwoRomansSubtractsMMMCCCLXXXIXsubMMCLXXVIIequalsMCCXII);
 	suite_add_tcase(s, tc_core);
     return s;
 }
