@@ -234,7 +234,18 @@ START_TEST(whenconvertRomanToIntisPassedMMMAndReturns3000)
 	ck_assert_msg(result==3000, "Failure, result='%d'\r\n", result);
 }
 END_TEST
-
+START_TEST(whenconvertRomanToIntisPassedMDAndReturns1500)
+{
+	int result=convertRomanToInt("MD");	
+	ck_assert_msg(result==1500, "Failure, result='%d'\r\n", result);
+}
+END_TEST
+START_TEST(whenconvertRomanToIntisPassedDCCAndReturns700)
+{
+	int result=convertRomanToInt("DCC");	
+	ck_assert_msg(result==700, "Failure, result='%d'\r\n", result);
+}
+END_TEST
 
 Suite * RomanCalculator_suite(void)
 {
@@ -270,6 +281,8 @@ Suite * RomanCalculator_suite(void)
 	tcase_add_test(tc_core, whengetTokensFromRomanisPassedMMMCCCLXXAndReturnsQty4AndMMM_CCC_L_XX);
 	tcase_add_test(tc_core, whenconvertRomanToIntisPassedMAndReturns1000);
 	tcase_add_test(tc_core, whenconvertRomanToIntisPassedMMMAndReturns3000);
+	tcase_add_test(tc_core, whenconvertRomanToIntisPassedMDAndReturns1500);
+	tcase_add_test(tc_core, whenconvertRomanToIntisPassedDCCAndReturns700);
 	suite_add_tcase(s, tc_core);
     return s;
 }
