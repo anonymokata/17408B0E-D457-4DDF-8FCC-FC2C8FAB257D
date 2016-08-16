@@ -70,7 +70,8 @@ int convertRomanToInt(char * inputRomanNumeral) { //returns Roman Numberal or ER
 	int qtyOfTokens=getTokensFromRoman(inputRomanNumeral, &Tokens);
     int index;
 	int returnValue=0;
-	for (index=0; index < qtyOfTokens; index++) {
+	index=0;
+	while(index < qtyOfTokens) {
 		int len=strlen(Tokens[index]);
 		switch (Tokens[index][0]) {
 			case 'M':
@@ -80,7 +81,12 @@ int convertRomanToInt(char * inputRomanNumeral) { //returns Roman Numberal or ER
 				returnValue=returnValue+500; //Only 1 d is allowed
 				break;
 			case 'C':
-				returnValue=returnValue+100*len; 
+				if ((index+1 < qtyOfTokens)&&(Tokens[index+1][0]=='M')) {
+					returnValue = returnValue + 900;
+					index++; //Can skip the M
+				} else {
+					returnValue=returnValue+100*len;
+				}
 				break;
 			case 'L':
 				returnValue=returnValue+50; //Only one L is allowed
@@ -98,6 +104,7 @@ int convertRomanToInt(char * inputRomanNumeral) { //returns Roman Numberal or ER
 				returnValue=0;
 				break;
 		}
+		index++;
 	}
 	return returnValue;
 }
@@ -115,6 +122,7 @@ int getTokensFromRoman(char *inputRomanNumeral, unsigned char (*Tokens)[TOKEN_QT
 		}
 		strncat((*Tokens)[tokensReturned], &inputRomanNumeral[index], 1);
 	}
+		
 	tokensReturned++; //return one more than last index
 	return tokensReturned;
 }
