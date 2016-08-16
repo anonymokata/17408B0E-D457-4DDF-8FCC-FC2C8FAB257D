@@ -85,6 +85,9 @@ int convertRomanToInt(char * inputRomanNumeral) { //returns Roman Numberal or ER
 			case 'L':
 				returnValue=returnValue+50; //Only one L is allowed
 				break;
+			case 'X':
+				returnValue=returnValue+10*len; //Only one L is allowed
+				break;
 			default:
 				returnValue=0;
 				break;
