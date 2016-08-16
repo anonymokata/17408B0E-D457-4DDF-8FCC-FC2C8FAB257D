@@ -28,10 +28,14 @@ int getTokensFromRoman(char *inputRomanNumeral, unsigned char (*Tokens)[TOKEN_QT
 //Converts a Roman Numeral to an integer, since 0 is not a valid Roman Numeral 0 is returned on Error
 int convertRomanToInt(char * inputRomanNumeral);
 
+// This function validates the roman number
+_Bool validateRomanNumber(char * InputRomanNumeral);
+
 // Customer Interface, outputRomanNumeral= firstInputRomanNumeral + secondInputRomanNumeral, "Error" when input or error is incorrect
 void AddTwoRomans(char * firstInputRomanNumeral, char * secondInputRomanNumeral, char * outputRomanNumeral);
 
 // Customer Interface, outputRomanNumeral= firstInputRomanNumeral - subtractedInputRomanNumeral, "Error" when input or error is incorrect
 void SubTwoRomans(char * firstInputRomanNumeral, char * subtractedInputRomanNumeral, char * outputRomanNumeral);
+
 
 #endif /* ROMAN_CALCULATOR_H */
