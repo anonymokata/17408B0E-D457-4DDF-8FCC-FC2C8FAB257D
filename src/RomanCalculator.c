@@ -165,6 +165,29 @@ int getTokensFromRoman(char *inputRomanNumeral, unsigned char (*Tokens)[TOKEN_QT
 	return tokensReturned;
 }
 
+//This function validates the roman number and returns 0 if it is not a roman number
+//It is a brute force method that iterates though the universe of roman numbers and attempt to find a match
+//It was implemented this way due to time constraints and the fact tha searching 3999 values is nothing to a computer.
+//This would be implemented this wasy if the design criteria were for speed
+_Bool validateRomanNumber(char * InputRomanNumeral) {
+	_Bool returnValue=0;  //Assume we don't have a match
+	unsigned char eachRomanNumber[MAX_ROMAN_LENGTH];
+	int eachNumber;
+	int playbackNumber;
+	for (eachNumber=1; eachNumber<4000; eachNumber++) {
+		int index;
+		for (index=0; index < MAX_ROMAN_LENGTH; index++) {
+			eachRomanNumber[index]=0;
+		}
+		convertIntToRoman(eachNumber, eachRomanNumber);
+		_Bool same=!strcmp(InputRomanNumeral, eachRomanNumber);
+		if (same) {
+			returnValue=1;
+			break; //exit we found a match
+		}
+	}
+	return returnValue;
+}
 
 // Customer Interface, outputRomanNumeral= firstInputRomanNumeral + secondInputRomanNumeral, "Error" when input or error is incorrect
 void AddTwoRomans(char * firstInputRomanNumeral, char * secondInputRomanNumeral, char * outputRomanNumeral) {
@@ -179,3 +202,5 @@ void SubTwoRomans(char * firstInputRomanNumeral, char * subtractedInputRomanNume
 	int subtractedNumber= convertRomanToInt(subtractedInputRomanNumeral);
 	convertIntToRoman(firstNumber - subtractedNumber, outputRomanNumeral);
 }
+
+
